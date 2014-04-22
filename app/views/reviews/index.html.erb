@@ -1,18 +1,12 @@
-<h1>Find Something Near App Academy</h1>
+<h1>All Things Near App Academy</h1>
 
-<div id="input_box">
-  <%= form_for(@review) do |f| %>
-    <ul>
-    <% @review.errors.full_messages.each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-    </ul>
-    <p>
-      <%= f.label "What are you Looking for?" %><br />
-      <%= f.text_field :restaurant %>
-    </p>
-    <p>
-      <%= f.submit "find it!" %>
-    </p>
+<ul id="reviews">
+  <% @reviews.each do |review| %>
+    <li>
+      <%= link_to review.restaurant, review_path(review), 
+      class: 'review_title', id: "review_#{review.id}" %>
+    </li>
   <% end %>
-</div>
+  
+  <%= link_to "Add a Restaurant", new_review_path, class: "new_review" %>
+</ul>

@@ -1,4 +1,4 @@
-<h1>Add a Restaurant</h1>
+<h1>Find Something Near App Academy</h1>
 <%= form_for(@review) do |f| %>
   <ul>
   <% @review.errors.full_messages.each do |error| %>
@@ -6,14 +6,10 @@
   <% end %>
   </ul>
   <p>
-    <%= f.label :restaurant %><br />
+    <%= f.label "What are You Looking For?" %><br />
     <%= f.text_field :restaurant %>
   </p>
   <p>
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
+    <%= f.submit "find it!" %>
   </p>
 <% end %>
