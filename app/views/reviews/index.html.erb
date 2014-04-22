@@ -1,0 +1,18 @@
+<h1>Find Something Near App Academy</h1>
+
+<div id="input_box">
+  <%= form_for(@review) do |f| %>
+    <ul>
+    <% @review.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+    </ul>
+    <p>
+      <%= f.label "What are you Looking for?" %><br />
+      <%= f.text_field :restaurant %>
+    </p>
+    <p>
+      <%= f.submit "find it!" %>
+    </p>
+  <% end %>
+</div>
