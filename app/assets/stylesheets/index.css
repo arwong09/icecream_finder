@@ -2,9 +2,14 @@
   background-color: rgba(255,255,255,0.9);
   border-radius: 5px;
   float: left;
-  width: calc(25% - 10px);
+  width: 200px;
+  padding: 3px;
   margin: 5px;
-  
+}
+
+.tile_pic img {
+  width: 200px;
+  height: 200px;
 }
 
 #add {
