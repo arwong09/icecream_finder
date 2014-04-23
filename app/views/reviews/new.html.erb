@@ -1,15 +1,21 @@
-<h1>Find Something Near App Academy</h1>
-<%= form_for(@review) do |f| %>
-  <ul>
-  <% @review.errors.full_messages.each do |error| %>
-    <li><%= error %></li>
+<%= stylesheet_link_tag "new.css" %>
+<%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' %>
+
+<div id="new_box">
+  <h1>Find Something Near App Academy</h1>
+  <%= form_for(@review) do |f| %>
+   
+    <div id="form_box">
+    
+      <%= f.label "What are You Looking For?",
+      id: "label" %><br />
+      <div id="form_bottom">
+      <%= f.text_field :restaurant %>
+   
+    <p>
+      <%= f.submit "find it!" %>
+    </p>
+  </div>
+  </div>
   <% end %>
-  </ul>
-  <p>
-    <%= f.label "What are You Looking For?" %><br />
-    <%= f.text_field :restaurant %>
-  </p>
-  <p>
-    <%= f.submit "find it!" %>
-  </p>
-<% end %>
+</div>
