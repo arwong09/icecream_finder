@@ -1,12 +1,14 @@
+<%= stylesheet_link_tag "index.css" %>
 <h1>All Things Near App Academy</h1>
 
-<ul id="reviews">
-  <% @reviews.each do |review| %>
-    <li>
-      <%= link_to review.restaurant, review_path(review), 
-      class: 'review_title', id: "review_#{review.id}" %>
-    </li>
-  <% end %>
-  
-  <%= link_to "Add a Restaurant", new_review_path, class: "new_review" %>
-</ul>
+<% @reviews.each do |review| %>
+<div class="tile">
+    <%= link_to review.restaurant, review_path(review), 
+    class: 'review_title', id: "review_#{review.id}" %>
+</div>
+
+<% end %>
+<div style="clear: both" />
+<div id="add">
+<%= link_to "Add a Restaurant", new_review_path, class: "new_review" %>
+</div>
